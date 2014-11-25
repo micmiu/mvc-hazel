@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false">
+
+	<diskStore path="java.io.tmpdir/cache/web" />
+
+	<!-- DefaultCache setting. -->
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="300" timeToLiveSeconds="600" overflowToDisk="true" />
+
+	<!-- Special objects setting. -->
+	<cache name="com.micmiu.mvc.hazel.web.entity.User" maxElementsInMemory="1000"
+		eternal="true" overflowToDisk="true" maxElementsOnDisk="10000" />
+	<cache name="com.micmiu.mvc.hazel.web.entity.User.roleList"
+		maxElementsInMemory="1000" eternal="true" overflowToDisk="true"
+		maxElementsOnDisk="10000" />
+	<cache name="com.micmiu.mvc.hazel.web.entity.Role" maxElementsInMemory="100"
+		eternal="true" overflowToDisk="true" maxElementsOnDisk="1000" />
+	<cache name="com.micmiu.mvc.hazel.web.entity.Role.useList"
+		maxElementsInMemory="100" eternal="true" overflowToDisk="true"
+		maxElementsOnDisk="1000" />
+	<cache name="com.micmiu.mvc.hazel.web.entity.Role.authList"
+		maxElementsInMemory="100" eternal="true" overflowToDisk="true"
+		maxElementsOnDisk="1000" />
+</ehcache>

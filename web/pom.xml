@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.micmiu.mvc</groupId>
+        <artifactId>hazel-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.micmiu.mvc</groupId>
+    <artifactId>hazel-web</artifactId>
+    <packaging>war</packaging>
+    <name>hazel-web</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.micmiu.mvc</groupId>
+            <artifactId>hazel-core</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.30</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <mvc.hazel.core.version>1.0-SNAPSHOT</mvc.hazel.core.version>
+    </properties>
+    <build>
+        <filters>
+            <filter>src/main/filters/filter-${env}.properties</filter>
+        </filters>
+        <resources>
+            <!-- 只过滤properties文件中得属性 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.sql</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+    <!-- 环境 -->
+    <profiles>
+        <!-- 开发环境，默认激活 -->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+            </properties>
+            <activation>
+                <!--默认启用 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <!-- 生产环境 -->
+        <profile>
+            <id>production</id>
+            <properties>
+                <env>production</env>
+            </properties>
+        </profile>
+        <!-- 测试环境 -->
+        <profile>
+            <id>test</id>
+            <properties>
+                <env>test</env>
+            </properties>
+        </profile>
+    </profiles>
+</project>
