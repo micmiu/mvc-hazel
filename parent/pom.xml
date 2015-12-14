@@ -5,14 +5,14 @@
     <parent>
         <groupId>com.micmiu.mvc</groupId>
         <artifactId>hazel-mvc</artifactId>
-        <version>1.0</version>
+        <version>1.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>hazel-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>hazel-parent</name>
     <url>https://github.com/micmiu</url>
 
