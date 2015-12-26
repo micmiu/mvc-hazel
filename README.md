@@ -7,6 +7,8 @@
 * 代码托管地址: https://github.com/micmiu/mvc-hazel
 * 项目文档主页: http://micmiu.github.io/mvc-hazel/
 
+Tips:目前暂停更新，有兴趣的可以参考最新的开发框架演示项目：https://github.com/micmiu/ferriswheel。
+
 
 **Technical Summary :**
 
